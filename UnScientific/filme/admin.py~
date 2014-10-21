@@ -4,9 +4,9 @@ from models import Pessoa
 
 # Register your models here.
 
-class PessoaAdmin(admin.ModelAdmin):
+class CadastraFilme(admin.ModelCadastra):
 	list_display = ['NomeFilme','TipoFilme','DataLancamento','Produtora']
 	list_filter = ['Codigo','Prateleira','Setor']
 	search_fields = ['NomeFilme','Produtora']
 	
-admin.site.register(Filme,PessoaAdmin)
+admin.site.register(Filme,CadastraFilme)

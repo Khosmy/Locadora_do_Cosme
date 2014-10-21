@@ -3,7 +3,7 @@ from django.db import models
 
 # Create your models here.
 
-FILME_OPCOES = [
+TIPO_FILME = [
       
       ('A','ACAO'),
       ('B','ADULTO'),

@@ -5,9 +5,9 @@ from models import Filme
 
 
 class CobrancaFilme(admin.ModelCobranca):
-	list_display = ['Lancamento','Promocional','Lancamento']
+	list_display = ['NomeFilme','CategoriaFilme','NomeLocador','StatusLocador']
 	list_filter = ['NomeFilme']
-	search_fields = ['Valor','CategoriaFilme']
+	search_fields = ['NomeLocador','StatusLocador']
 	save_as = True
 	
 admin.site.register(Filme,CobrancaFilme)	

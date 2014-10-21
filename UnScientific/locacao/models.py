@@ -27,15 +27,21 @@ CATEGORIA_FILME = [
 
 ]
 
+STATUS_LOCADOR = [
+      
+      ('I','Inadiplente'),
+      ('A','Adiplente'),
+
+]
+
 
 class AluguelFilme (models.Model):
 	NomeFilme = models.CharField('Nome do filme',max_length=100,null=True)
 	TipoFilme = models.CharField('Tipo de Filme',max_length=1,choices=TIPO_FILME,null=True)
 	CategoriaFilme = models.CharField('Categoria do Filme',max_length=1,choices=CATEGORIA_FILME,null=True)
-	DataAluguel = models.DateTimeField('Data do Aluguel',null=True)
 	NomeLocador = models.CharField('Nome do Locador',max_length=100,null=True)
-	DataDevolucao = models.DateTimeField('Data do Aluguel',null=True)
-	NumDiarias = models.IntegerField('Numero de dias alugado',null=True)
+	StatusLocador = models.CharField('Condição do Locador',max_length=1,choices=STATUS_LOCADOR,null=True)
+
 	
 	def __unicode__(self):
 		return self.AluguelFilme

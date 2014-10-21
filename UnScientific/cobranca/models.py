@@ -6,14 +6,14 @@ from django.db import models
 
 CATEGORIA_FILME = [
       
-      ('L','Lançamento'),
+      ('L','Lancamento'),
       ('P','Promocional'),
       ('N','Normal')
 
 ]
 
 class Lancamento (models.Model):
-	CategoriaFilme = models.CharField('Lançamento',max_length='L',choices=CATEGORIA_FILME)
+	CategoriaFilme = models.CharField('Lancamento',max_length='L',choices=CATEGORIA_FILME)
 	Valor = models.IntegerField('R$',max_length=5,null=True)
 class Promocional (models.Model):
 	CategoriaFilme = models.CharField('Promocional',max_length='P',choices=CATEGORIA_FILME)

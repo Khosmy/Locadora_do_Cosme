@@ -4,8 +4,8 @@ from models import Filme
 
 
 class locacaoFilme(admin.ModelLocacao):
-	list_display = ['NomeLocador','DataAluguel','DataDevolucao']
-	list_filter = ['NomeFilme']
+	list_display = ['NomeLocador','NomeFilme','DataAluguel','TipoFilme','CategoriaFilme','DataDevolucao']
+	list_filter = ['NomeFilme','NomeLocador']
 	search_fields = ['TipoFilme','CategoriaFilme']
 	save_as = True
 	

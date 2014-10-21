@@ -3,7 +3,7 @@ from django.db import models
 
 # Create your models here.
 
-FILME_OPCOES = [
+TIPO_FILME = [
       
       ('A','ACAO'),
       ('B','ADULTO'),
@@ -23,7 +23,7 @@ FILME_OPCOES = [
 
 class Filme(models.Model):
 	
-	Nome = models.CharField('Nome',max_length=100)
+	NomeFilme = models.CharField('Nome',max_length=100)
 	TipoFilme = models.CharField('Tipo de Filme',max_length=1,choices=TIPO_FILME,null=True)
 	Codigo = models.CharField('Código do Filme',max_length=10,null=True)
 	DataLancamento = models.DateField('Data de Lançamento',null=True)

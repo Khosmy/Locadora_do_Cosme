@@ -3,21 +3,6 @@ from django.db import models
 
 # Create your models here.
 
-TIPO_FILME = [
-      
-      ('A','ACAO'),
-      ('B','ADULTO'),
-      ('C','ANIMACAO/DESENHOS'),
-      ('D','AVENTURA'),
-      ('E','COMEDIA'),
-      ('F','DOCUMENTARIO'),
-      ('G','FICCAO_CIENTIFICA'),
-      ('H','MUSICAL'),
-      ('I','SUPENSE'),
-      ('J','TERROR'),
-      ('K','OUTROS')
-
-]
 
 CATEGORIA_FILME = [
       
@@ -27,15 +12,19 @@ CATEGORIA_FILME = [
 
 ]
 
+class Lancamento (models.Model):
+	CategoriaFilme = models.CharField('Lançamento',max_length='L',choices=CATEGORIA_FILME)
+	Valor = models.IntegerField('R$',max_length=5,null=True)
+class Promocional (models.Model):
+	CategoriaFilme = models.CharField('Promocional',max_length='P',choices=CATEGORIA_FILME)
+	Valor = models.IntegerField('R$',max_length=5,null=True)
+class Lancamento (models.Model):
+	CategoriaFilme = models.CharField('Normal',max_length='N',choices=CATEGORIA_FILME)
+	Valor = models.IntegerField('R$',max_length=5,null=True)
 
-class AluguelFilme (models.Model):
-	NomeFilme = models.CharField('Nome do filme',max_length=100,null=True)
-	TipoFilme = models.CharField('Tipo de Filme',max_length=1,choices=TIPO_FILME,null=True)
-	CategoriaFilme = models.CharField('Categoria do Filme',max_length=1,choices=TIPO_FILME,null=True)
-	DataAluguel = models.DateTimeField('Data do Aluguel',null=True)
-	NomeLocador = models.CharField('Nome do Locador',max_length=100,null=True)
-	DataDevolucao = models.DateTimeField('Data do Aluguel',null=True)
-	NumDiarias = models.IntegerField('Numero de dias alugado',null=True)
 	
 	def __unicode__(self):
-		return self.AluguelFilme
+		return self.CobrancaFilme
+
+
+
